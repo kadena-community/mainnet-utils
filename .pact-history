@@ -1,0 +1,4 @@
+(< 0 1)
+(compose (length) (< 2))
+enforce-guard
+enforce-gurad
