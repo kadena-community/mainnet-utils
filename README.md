@@ -1,7 +1,6 @@
 # mainnet-utils
 
 This repo contains utility modules under namespace **util**, which allows users to create custom guards.   
-
 For additional information on namespaces, please refer to [Pact documentation](https://pact-language.readthedocs.io/en/latest/pact-reference.html#namespaces)
 
 ## Namespace `util`
@@ -87,7 +86,7 @@ GUARD that enforces TIME is at or before time A
 - takes a:time
 - produces `guard`
 
-## [`guard-one`](./util/guards/guard-one.pact)
+## [guard-one](./util/guard-one/guard-one.pact)
 
 #### guard-all
 `(guard-all guard-list)`
