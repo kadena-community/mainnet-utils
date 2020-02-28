@@ -5,9 +5,9 @@ For additional information on namespaces, please refer to [Pact documentation](h
 
 ## Namespace `util`
 
-### Deployed Modules:
+### Modules
 * [**guards**](#guards)
-  * [guard-one](#guard-one)
+  * [guard-and](#guard-and)
   * [guard-or](#guard-or)
   * [after-date](#after-date)
   * [at-after-date](#at-after-date)
