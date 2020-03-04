@@ -41,7 +41,7 @@ or
 GUARD that enforces both guard A and guard B
 
 - takes a:guard
-- takes b: guard
+- takes b:guard
 - produces `guard`
 
 #### guard-or
@@ -51,7 +51,7 @@ GUARD that enforces both guard A and guard B
 GUARD that enforces guard A or guard B
 
 - takes a:guard
-- takes b: guard
+- takes b:guard
 - produces `guard`
 
 #### after-date
@@ -93,7 +93,7 @@ GUARD that enforces TIME is at or before time A
 
 GUARD that enforces all guards in a list
 
-- takes guard-list: [guard]
+- takes guard-list:[guard]
 - produces `guard`
 
 #### guard-any
@@ -101,13 +101,13 @@ GUARD that enforces all guards in a list
 
 GUARD that enforces at least one of the guards in a list
 
-- takes guard-list: [guard]
+- takes guard-list:[guard]
 - produces `guard`
 
 #### max-gas
 `(max-gas a)`
 
-GUARD that enforces gas-limit * gas-price at or below a
+GUARD that enforces gas-limit * gas-price at or below A
 
 - takes a:decimal
 - produces `guard`
@@ -115,7 +115,7 @@ GUARD that enforces gas-limit * gas-price at or below a
 #### max-gas-price
 `(max-gas-price a)`
 
-GUARD that enforces gas-price is at or below a
+GUARD that enforces gas-price is at or below A
 
 - takes a:decimal
 - produces `guard`
@@ -123,7 +123,7 @@ GUARD that enforces gas-price is at or below a
 #### max-gas-limit
 `(max-gas-limit a)`
 
-GUARD that enforces gas-limit is at or below a
+GUARD that enforces gas-limit is at or below A
 
 - takes a:integer
 - produces `guard`
