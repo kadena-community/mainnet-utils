@@ -1,0 +1,31 @@
+name: Build Pact and run util REPL tests
+
+on:
+  push:
+    branches:
+    - master
+    - github-ci
+    - ci/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: kadena-io/pact@master
+      with:
+        ghc-version: '>= 8.4'
+        cabal-version: '>= 2.2'
+    - name: Install dependencies
+      shell: bash
+      run: |
+        cabal v2-update
+        cabal v2-build
+    - name: Build Pact
+      shell: bash
+      run: cabal v2-install
+    - name: Run Repl Tests
+      shell: bash
+      run: |
+        chmod +x ./util/*/*.repl
+        pact -t ./util/guards/guards.repl
+        pact -t ./util/guard1/guard1.repl
