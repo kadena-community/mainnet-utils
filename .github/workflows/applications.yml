@@ -11,6 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - uses: kadena-io/pact@master
       with:
         ghc-version: '>= 8.4'
@@ -28,4 +30,4 @@ jobs:
       run: |
         chmod +x ./util/*/*.repl
         pact -t ./util/guards/guards.repl
-        pact -t ./util/guard1/guard1.repl
+        pact -t ./util/guards/guard1.repl
