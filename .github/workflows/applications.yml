@@ -1,0 +1,19 @@
+name: Build Pact and run util REPL tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+    - name: Install Pact
+      shell: bash
+      run: |
+        brew update
+        brew install kadena-io/pact/pact
+    - name: Clone project
+      uses: actions/checkout@v2
+    - name: Run Repl Tests
+      shell: bash
+      run: |
+        pact -t "test.repl"
