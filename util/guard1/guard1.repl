@@ -51,7 +51,7 @@
 (expect
   (format "chain-gas-price {} is at max-gas-price {}"
     [(chain-gas-price) 0.0005])
-  false
+  true
   (enforce-guard (max-gas-price 0.0005)))
 
 (expect-failure
