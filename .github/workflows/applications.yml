@@ -9,25 +9,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - uses: kadena-io/pact@master
-      with:
-        ghc-version: '>= 8.4'
-        cabal-version: '>= 2.2'
-    - name: Install dependencies
+    - name: Install Pact
       shell: bash
       run: |
-        cabal v2-update
-        cabal v2-build
-    - name: Build Pact
-      shell: bash
-      run: cabal v2-install
+        brew update
+        brew install kadena-io/pact/pact
+    - name: Clone project
+      uses: actions/checkout@v2
     - name: Run Repl Tests
       shell: bash
       run: |
-        chmod +x ./util/*/*.repl
-        pact -t ./util/guards/guards.repl
-        pact -t ./util/guards/guard1.repl
+        pact -t "test.repl"
