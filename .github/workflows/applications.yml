@@ -1,11 +1,6 @@
 name: Build Pact and run util REPL tests
 
-on:
-  push:
-    branches:
-    - master
-    - github-ci
-    - ci/*
+on: [push]
 
 jobs:
   build:
