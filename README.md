@@ -13,7 +13,7 @@ For additional information on namespaces, please refer to [Pact documentation](h
   * [at-after-date](#at-after-date)
   * [before-date](#before-date)
   * [at-before-date](#at-before-date)
-* [**guard-one**](#guard-one)
+* [**guards1**](#guards1)
   * [guard-all](#guard-all)
   * [guard-any](#guard-any)
   * [max-gas-notional](#max-gas-notional)
@@ -86,7 +86,7 @@ GUARD that enforces TIME is at or before time A
 - takes a:time
 - produces `guard`
 
-## [guard-one](./util/guard-one/guard-one.pact)
+## [guards1](./util/guards1/guards1.pact)
 
 #### guard-all
 `(guard-all guard-list)`
