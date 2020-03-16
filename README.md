@@ -16,7 +16,7 @@ For additional information on namespaces, please refer to [Pact documentation](h
 * [**guard-one**](#guard-one)
   * [guard-all](#guard-all)
   * [guard-any](#guard-any)
-  * [max-gas](#max-gas)
+  * [max-gas-notional](#max-gas-notional)
   * [max-gas-price](#max-gas-price)
   * [max-gas-limit](#max-gas-limit)
 
@@ -104,8 +104,8 @@ GUARD that enforces at least one of the guards in a list
 - takes guard-list:[guard]
 - produces `guard`
 
-#### max-gas
-`(max-gas a)`
+#### max-gas-notional
+`(max-gas-notional a)`
 
 GUARD that enforces gas-limit * gas-price at or below A
 
