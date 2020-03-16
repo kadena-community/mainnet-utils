@@ -1,3 +1,4 @@
+;;Functions for creating namespace util and its admin and users.
 (define-keyset 'util-ns-users)
 (define-keyset 'util-ns-admin)
 
