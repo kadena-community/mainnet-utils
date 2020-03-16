@@ -1,4 +1,4 @@
-;; guard1.repl
+;; guards1.repl
 (enforce-pact-version "3.5.0")
 
 (env-data
@@ -13,11 +13,11 @@
 
 
 (begin-tx)
-(load "guard1.pact")
+(load "guards1.pact")
 (commit-tx)
 
 (begin-tx)
-(use util.guard1)
+(use util.guards1)
 
 ;;set chain gas price to 0.0005 and chain gas limit to 500
 (env-chain-data {

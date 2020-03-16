@@ -1,15 +1,15 @@
-;; guard1.pact
+;; guards1.pact
 
 (namespace 'util)
 
-(module guard1 'util-ns-admin
+(module guards1 'util-ns-admin
   "************************WARNING************************\
-  \This module is currently upgradable by 'util-ns-admin  \
-  \and should not be in use until the governance is       \
-  \replaced with AUTONOMOUS, meaning that the module      \
-  \will be non-upgradable.                                \
-  \                                                       \
-  \Functions for implementing gas guards."
+  \ This module is currently governed by 'util-ns-admin   \
+  \ and should not be in use until the governance is      \
+  \ replaced with AUTONOMOUS, meaning that the module     \
+  \ will be non-upgradable.                               \
+  \ ******************************************************\
+  \ Functions for implementing gas guards."
 
 ;  (defcap AUTONOMOUS ()
 ;    (enforce false "Non-upgradeable"))
