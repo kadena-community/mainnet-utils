@@ -1,3 +1,6 @@
+;; guard1.repl
+(enforce-pact-version "3.5.0")
+
 (env-data
  { 'util-ns-users: ["util-ns-user"]
  , 'util-ns-admin: ["util-ns-admin"]
@@ -22,24 +25,24 @@
   "gas-limit": 500
 })
 
-;;Test max-gas
+;;Test max-gas-notional
 (expect
-  (format "chain-gas {} is smaller than max-gas {}"
-    [(chain-gas), 0.5])
+  (format "chain-gas-notional {} is smaller than max-gas-notional {}"
+    [(chain-gas-notional), 0.5])
   true
-  (enforce-guard (max-gas 0.5)))
+  (enforce-guard (max-gas-notional 0.5)))
 
 (expect
-  (format "chain-gas {} is at than max-gas {}"
-    [(chain-gas), 0.25])
+  (format "chain-gas-notional {} is at than max-gas-notional {}"
+    [(chain-gas-notional), 0.25])
   true
-  (enforce-guard (max-gas 0.25)))
+  (enforce-guard (max-gas-notional 0.25)))
 
 (expect-failure
-  (format "chain-gas {} is bigger than than max-gas {}"
-    [(chain-gas), 0.24])
+  (format "chain-gas-notional {} is bigger than than max-gas-notional {}"
+    [(chain-gas-notional), 0.24])
   "Gas Limit * Gas Price must be smaller than or equal to 0.24"
-  (enforce-guard (max-gas 0.24)))
+  (enforce-guard (max-gas-notional 0.24)))
 
 ;;Test max-gas-price
 (expect
@@ -84,7 +87,7 @@
 ;;Sign bob-ks
 (env-keys ["bob"])
 
-;;Success and failure cases
+;;Examples of successful and failing guards for testing `guard-any` and `guard-all`
 (expect "Bob-ks is signed"
   true
   (enforce-guard (read-keyset 'bob-ks)))
@@ -105,6 +108,10 @@
   (enforce-guard (max-gas-limit 300)))
 
 ;;Test guard-all
+(expect-failure "guard-all cannot take in an empty list"
+  "Guard list cannot be empty"
+  (guard-all []))
+
 (expect-failure "0/3 of the guard enforcements succeed"
   "Keyset failure (keys-all): [ks]"
   (enforce-guard (guard-all [
@@ -138,6 +145,10 @@
       ])))
 
 ;;Test guard-any
+(expect-failure "guard-any cannot take in an empty list"
+  "Guard list cannot be empty"
+  (guard-any []))
+
 (expect-failure "0/3 of the guard enforcements succeed"
   "None of the guards passed"
   (enforce-guard (guard-any [
