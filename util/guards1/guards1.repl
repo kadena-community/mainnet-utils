@@ -1,19 +1,21 @@
 ;; guards1.repl
-(enforce-pact-version "3.5.0")
+(enforce-pact-version "4.6.0")
 
 (env-data
  { 'util-ns-users: ["util-ns-user"]
  , 'util-ns-admin: ["util-ns-admin"]
  })
 (env-keys ["util-ns-user", "util-ns-admin"])
-
+(env-exec-config ["DisablePact44"])
 (begin-tx)
 (load "../util/util-ns.pact")
+(env-exec-config [])
 (commit-tx)
 
 
 (begin-tx)
 (load "guards1.pact")
+(typecheck "util.guards1")
 (commit-tx)
 
 (begin-tx)
