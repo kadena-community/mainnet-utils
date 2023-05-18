@@ -1,5 +1,5 @@
 ;; guards1.repl
-(enforce-pact-version "3.5.0")
+(enforce-pact-version "4.6.0")
 
 (env-data
  { 'util-ns-users: ["util-ns-user"]
